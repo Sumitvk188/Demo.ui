@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <div class="text-center">
+        <h1 class="display-4">Welco</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+    <ul>
+        @foreach (var employee in Model.Employees)
+        {
+            <li>
+                @employee.Name - @employee.Email-<a asp-page="./UpdateEmployee" asp-route-id="@employee.Id">Edit</a>
+            </li>
+
+        }
+    </ul>
